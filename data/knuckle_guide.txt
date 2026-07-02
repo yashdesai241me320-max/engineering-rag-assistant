@@ -1,0 +1,249 @@
+REAR KNUCKLE
+SolidWorks Build Guide
+eBaja NITK Racing  |  Season 2026–27
+Complete beginner-friendly step-by-step  +  every mistake to avoid
+Based on the finalized design (Trailing Arm + Camber Link | Al 7075-T6 | Ø62 H7 bearing bore)
+Before You Open SolidWorks — Read This First
+You are building a real metal part that will go on a real car. Every number matters. Read this page completely before touching SolidWorks.
+What You Are Building
+A rear upright (knuckle) for trailing arm + camber link rear suspension. The design is already finalised — see the reference image. Your job is to model it in SolidWorks using your hardpoints.
+Your Hardpoints — Use These Exact Numbers
+These come from your Front&RearHpts25-26 V2 file. Every feature position comes from these. Do not change them.
+Final Design Dimensions — Reference These While Modelling
+Units Setting — Do This Before Anything Else
+PHASE 1 — New Part + Reference Points
+You set up the file and mark all your hardpoints so you have snap targets when drawing.
+  STEP 1   Create New Part File
+Open SolidWorks.
+File → New → select Part (the single box icon) → click OK.
+A grey workspace opens with three transparent rectangles — Front Plane, Top Plane, Right Plane. This is normal.
+Go to Tools → Options → Document Properties → Units → MMGS → OK.
+File → Save As → name it:  Rear_Knuckle_eBaja_NITK_2027 → Save.
+  STEP 2   Open Sketch on Front Plane
+Your hardpoints are defined on the Front Plane. Your sketch must also be on the Front Plane so coordinates match.
+In the Feature Manager tree on the LEFT, click Front Plane — it highlights blue.
+At the top, click the Sketch tab.
+Click the Sketch button (pencil icon, first button on left of toolbar).
+The view rotates to face you head-on. The plane turns orange/yellow.
+Bottom status bar should now say:  Editing Sketch
+  STEP 3   Place All 4 Hardpoints as Reference Points
+Place dots at each hardpoint location. These are just markers — they help you snap your sketch lines to the exact right positions.
+In Sketch toolbar, find the Point tool. It may be hidden — click the small dropdown arrow next to the Line tool and look for Point.
+Click somewhere in the viewport to place a point.
+IMMEDIATELY after clicking — look at the LEFT PANEL. You will see X and Y boxes with values.
+Clear X box → type the Y coordinate from the table below.
+Clear Y box → type the Z coordinate from the table below.
+Press Enter. Point snaps to exact position.
+Repeat for all 4 points.
+Press Ctrl+A to select all points.
+In left panel, tick the checkbox that says 'For Construction'.
+All points turn blue/grey — they are now reference-only and won't interfere with your shape.
+Click green tick to keep the points.
+PHASE 2 — Drawing the Knuckle Shape
+Now you draw the outline of the knuckle. Think of this as drawing it on paper — a flat shape that you will push out to make 3D. You are looking at it from the front of the car.
+The shape has: a central circle (bearing boss) + arm going up (camber link) + two arms going left (trailing arm fork) + plate on right side (caliper mount).
+  STEP 4   Draw the Central Bearing Boss Circle
+This is the most important feature. The wheel hub bearing sits inside this circle.
+In Sketch toolbar, click the Circle tool (looks like a circle with a centre dot).
+Hover over the Wheel Centre reference point you placed. Wait for the yellow snap dot to appear.
+Click to set circle centre exactly at the Wheel Centre point.
+Move mouse outward — a circle grows. Click anywhere to set a rough size.
+Click Smart Dimension tool (looks like a dimension line with arrows at the ends).
+Click the circle. A dimension box appears.
+Type 78 → press Enter. Circle snaps to Ø78mm.
+This is the bearing BOSS — the outer ring of metal. The actual bearing hole will be cut later.
+  STEP 5   Draw the Camber Link Arm Going Upward
+This arm goes straight up from the bearing boss to the camber link connection at the top. It looks like a neck.
+Click the Line tool in the Sketch toolbar.
+Draw the LEFT edge of the arm: start from the top of the Ø78mm circle, go straight up to Y = 717.69 (the camber link height). The line X position = -307.55 (that is WC X minus 10mm, because arm is 20mm wide).
+Draw the RIGHT edge: parallel line at X = -287.55 (WC X plus 10mm), same height.
+Close the top: draw horizontal line connecting both vertical lines at Y = 717.69.
+Now draw the camber link boss rectangle at the top: centred on the CL reference point (-356.45, 717.69). Make it 25mm wide and 10mm tall.
+The boss sticks out from the top of the arm.
+Use Smart Dimension to confirm: arm width = 20mm, boss width = 25mm, boss height = 10mm.
+  STEP 6   Draw the Trailing Arm Fork — Two Arms Going Left
+Two arms sticking out to the left. The trailing arm (from VD team) has two bolt holes that align with these two arms. This is called a fork because it grips the trailing arm from two sides.
+Draw the UPPER fork arm:
+    Top edge at Y = 347.45  (TA_F Y + 9mm)
+    Bottom edge at Y = 329.45  (TA_F Y - 9mm)
+    Extends from the LEFT side of the bearing boss to X = -554.26
+Draw the LOWER fork arm:
+    Top edge at Y = 297.12  (TA_R Y + 9mm)
+    Bottom edge at Y = 279.12  (TA_R Y - 9mm)
+    Extends from the LEFT side of the bearing boss to X = -565.97
+Draw a vertical bar on the FAR LEFT connecting both arms — closes the fork.
+    This bar goes from the top of upper arm down to the bottom of lower arm.
+The gap between the two arms = 55mm. Check this with Smart Dimension.
+Add boss rectangles at TA_F and TA_R points: each 25mm tall, sitting on the outboard face of each arm.
+  STEP 7   Draw the Caliper Mount Plate
+The brake caliper bolts here. It is a flat plate sticking out to the RIGHT of the bearing boss with two bolt holes.
+Draw a rectangle sticking out to the right from the bearing boss.
+The caliper mount centre is 95mm from the wheel centre.
+Plate width: 40mm. Plate height: 70mm (to accommodate 50mm bolt spacing + material around holes).
+Plate left edge: connects to right side of bearing boss.
+Plate centre X = WC X + 95 = -297.55 + 95 = -202.55.
+Plate vertical centre = WC Y = 376.92.
+So plate goes from Y = 376.92 + 35 = 411.92 (top) to Y = 376.92 - 35 = 341.92 (bottom).
+Plate thickness (how far it sticks out horizontally): 12mm → so right edge at X = -202.55 + 6 = -196.55, left edge at X = -202.55 - 6 = -208.55.
+Draw a triangular gusset from the base of the caliper plate back to the bearing boss — this stops the plate from bending away under braking force.
+  STEP 8   Add Sketch Fillets to All Inside Corners
+Every place where two sketch lines meet at an inside corner needs a fillet. Sharp corners crack under repeated loading.
+Sketch toolbar → Sketch Fillet tool (rounded corner icon).
+Set radius = 6mm in the left panel.
+Click every inside corner — where two walls meet going inward.
+Most important corners to fillet: where arms meet the bearing boss body.
+Click green tick when all corners are done.
+  STEP 9   Check Sketch is Fully Defined
+Look at bottom status bar — must say 'Fully Defined'.
+Every line must be BLACK. Blue lines = not defined = will move randomly when you extrude.
+If any blue lines remain: click them → add Smart Dimension to constrain them.
+When all black and Fully Defined → click the green tick (top of left panel) to EXIT sketch.
+Ctrl + S to save.
+PHASE 3 — Making It 3D
+You push the flat sketch outward to give it thickness. This one step turns your 2D drawing into a 3D solid block.
+  STEP 10   Extrude the Sketch
+In Feature Manager tree on left, click your sketch to select it.
+Go to Features tab at the top.
+Click Extruded Boss/Base (first button — shows a flat shape being pushed out).
+Left panel opens with Direction settings.
+Direction 1: set depth = 35mm.
+Tick the Symmetric checkbox.
+This pushes 17.5mm toward you AND 17.5mm away — total = 35mm thick. This matches the side thickness of 70mm... wait — let's check:
+   The design shows side thickness = 70mm at the hub boss area.
+   But the overall body is thinner. Set body extrude to 35mm symmetric.
+   The hub boss thickness of 22mm will be added separately.
+Click green tick.
+  STEP 11   Add the Hub Boss — Extra Thickness Around Bearing
+The bearing boss needs 22mm extra thickness on the front face to house the bearing. You add this as a second extrude on top of the first.
+Click the FRONT flat face of your 3D body.
+Sketch tab → Sketch. Opens a new sketch on that face.
+Draw a circle centred on the bearing boss centre, diameter = 78mm.
+Exit sketch (green tick).
+Features → Extruded Boss/Base.
+Direction: outward (away from the main body).
+Depth: 22mm.
+Green tick.
+This adds a 22mm thick cylindrical disc on the front face — the bearing boss.
+PHASE 4 — Cutting All the Holes
+Now you cut all the holes. SolidWorks Hole Wizard creates correctly sized holes automatically.
+You have 6 holes to cut: 1 bearing bore + 1 camber link + 2 trailing arm + 2 caliper.
+  STEP 12   Cut the Bearing Bore — Ø62 H7
+The most precise hole. The bearing presses into this. H7 is a tolerance code meaning the hole is slightly smaller than the bearing, creating a press fit.
+Features → Hole Wizard.
+Type tab → select the straight hole icon (not threaded).
+Size: type 62mm (your bearing OD — Ø62 H7 as per the design).
+End Condition: Through All.
+Positions tab → click the FRONT face of the hub boss (the circular disc you just made).
+Hover cursor over the centre of that face until you see the yellow centre snap indicator.
+Click to place hole at centre.
+Green tick.
+After the hole is made: right-click the hole feature in tree → Edit Feature → change diameter to 62.015mm.
+The 0.015mm extra is the H7 interference fit — bearing must be pressed in, cannot fall out.
+  STEP 13   Cut the Camber Link Hole — Ø12.2mm
+Features → Hole Wizard.
+Type: straight hole (clearance — bolt passes through).
+Size: 12.2mm diameter.
+End Condition: Through All.
+Positions tab → click the top flat face of the camber link boss.
+Place hole at centre of that face (snap to the CL reference point).
+Green tick.
+  STEP 14   Cut the Trailing Arm Holes — 2× Ø12.2mm
+Features → Hole Wizard.
+Type: straight clearance hole. Size: 12.2mm. Through All.
+Positions tab → click the outboard face of the UPPER fork arm.
+Place hole centre at TA_F reference point: X = -554.26, Y = 338.45.
+Green tick.
+Repeat entire process for LOWER fork arm at TA_R: X = -565.97, Y = 288.12.
+  STEP 15   Cut the Caliper Holes — 2× Ø10.2mm Threaded M8
+These holes are THREADED. The brake caliper bolts screw directly in — no nut on the other side.
+Features → Hole Wizard.
+Type: Tapped hole (shows thread lines inside the icon).
+Standard: ISO. Size: M8.
+Thread depth (End Condition): Blind → depth = 16mm.
+Positions tab → click the flat face of the caliper mount plate.
+Place hole 1: 25mm ABOVE the WC Z height = at Y = 376.92 + 25 = 401.92.
+Place hole 2: 25mm BELOW = at Y = 376.92 - 25 = 351.92.
+Centre-to-centre spacing = 50mm. Confirm with Smart Dimension.
+Green tick.
+PHASE 5 — Fillets, Chamfer, Ribs
+This phase is what separates a good design from a broken one. Sharp edges crack. Ribs add stiffness without weight.
+  STEP 16   Add 3D Fillets to All Inside Edges
+Features tab → Fillet.
+Radius = 6mm.
+Click ALL inside edges — where two faces of the solid meet at an inward angle (concave).
+Most important edges:
+   → Where camber link arm meets the bearing boss
+   → Where each fork arm meets the bearing boss
+   → Where caliper plate meets the bearing boss
+   → All four corners of the fork fork arms
+At high stress zones (arm-to-boss junctions) increase to R8 or R10.
+Green tick.
+  STEP 17   Chamfer the Bearing Bore Edges
+Features tab → Chamfer.
+Select the two circular EDGES of the bearing bore — one on front face, one on back face.
+Distance = 1mm, Angle = 45 degrees.
+Green tick.
+  STEP 18   Add Triangular Rib to Camber Link Arm
+The camber link arm is tall and thin — it needs a rib to stop it bending sideways under lateral load.
+Click the SIDE face of the camber link arm.
+Sketch → Sketch on that face.
+Draw a right triangle: base along the main body, height going up the arm, hypotenuse connecting them.
+Base = 30mm. Height = 40mm.
+Exit sketch.
+Features → Extruded Boss/Base. Depth = 6mm (rib thickness).
+Green tick.
+Fillet the rib edges: R3mm.
+  STEP 19   Add Triangular Rib to Caliper Plate
+The caliper plate has braking force trying to pull it away from the body. A gusset triangle stops this.
+Click the SIDE face adjacent to where the caliper plate joins the bearing boss.
+Sketch on that face.
+Draw a triangle: base on the bearing boss body, hypotenuse going to the caliper plate base.
+Base = 20mm. Height = 15mm.
+Exit sketch → Extruded Boss → 6mm depth.
+Green tick. Fillet edges R3mm.
+PHASE 6 — Material + Mass Check
+  STEP 20   Assign Al 7075-T6 Material
+In Feature Manager tree, right-click Material (shows 'not specified').
+Click Edit Material.
+Navigate to: Aluminum Alloys → 7000 Series → 7075-T6.
+Click Apply → Close.
+If 7075-T6 not in library, create custom material with these values:
+  STEP 21   Check Mass
+Evaluate tab → Mass Properties.
+Read the Mass value in grams.
+PHASE 7 — FEA (Stress Analysis)
+Apply forces and check the part won't break. You need SolidWorks Simulation add-in. If no Simulation tab: Tools → Add-Ins → SolidWorks Simulation → tick both boxes → OK.
+  STEP 22   Create New Simulation Study
+Simulation tab → New Study.
+Type: Static.
+Name: Bump_3G.
+Green tick.
+  STEP 23   Set Mesh
+Right-click Mesh in Simulation tree → Create Mesh.
+Density: Fine (slider all the way right).
+Tick: Curvature-based mesh.
+Max element size: 4mm.
+Min element size: 1mm.
+OK. Wait 1-3 minutes.
+  STEP 24   Apply Fixtures
+Fixtures = what holds the knuckle in place. Fixed at the trailing arm bolt holes (the trailing arm holds the knuckle).
+Right-click Fixtures → Fixed Hinge.
+Select the cylindrical INSIDE face of the TA_F hole (inner curved surface of upper fork hole).
+Green tick.
+Repeat → Fixed Hinge → select cylindrical inside face of TA_R hole.
+Green tick.
+Add Roller/Slider → select flat face of camber link boss.
+Green tick.
+  STEP 25   Apply Loads and Run
+Right-click External Loads → Force.
+Select: inner cylindrical face of bearing bore.
+Set magnitude: 2913 N. Direction: normal to Top Plane, reversed (downward).
+Green tick.
+Right-click study name → Run.
+Wait for calculation.
+Results → Von Mises Stress plot → check peak stress < 503 MPa.
+Results → Factor of Safety plot → set limit 2.0 → check all zones blue (FoS > 2.0).
+Master List — Every Mistake to Avoid
+Final Checklist Before Submitting
+Baja NITK Racing  |  eBaja 2026-27  |  Rear Knuckle SolidWorks Build Guide
+Based on IJRET 2014  •  IJIRT 2018  •  IJRASET 2024  •  JETM 2025  •  Finalized design (Al 7075-T6, Trailing arm + Camber link)
