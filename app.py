@@ -42,15 +42,24 @@ if not api_key:
 def load_backend(_api_key):
     provider, client = get_client()
     chroma_client = chromadb.PersistentClient(path=DB_DIR)
-    collection = chroma_client.get_collection("engineering_docs", embedding_function=None)
-    embedder = LocalEmbedder.load()
+    try:
+        collection = chroma_client.get_collection("engineering_docs", embedding_function=None)
+        embedder = LocalEmbedder.load()
+    except Exception:
+        # Knowledge base not built yet (e.g. fresh deploy where chroma_db/
+        # isn't committed to git) — build it now from data/*.txt and *.pdf.
+        with st.spinner("First run: building knowledge base from source documents..."):
+            import ingest
+            ingest.main()
+        collection = chroma_client.get_collection("engineering_docs", embedding_function=None)
+        embedder = LocalEmbedder.load()
     return provider, client, collection, embedder
 
 
 try:
     provider, client, collection, embedder = load_backend(api_key)
 except Exception as e:
-    st.error(f"Could not load knowledge base. Run `python src/ingest.py` first. ({e})")
+    st.error(f"Could not build or load knowledge base. Check that data/*.txt or *.pdf files exist. ({e})")
     st.stop()
 
 if "history" not in st.session_state:
