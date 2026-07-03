@@ -4,7 +4,7 @@ A retrieval-augmented Q&A tool that answers questions grounded strictly in engin
 build documentation — built on a real SolidWorks fabrication guide for a Baja SAE
 rear knuckle (bearing bores, hardpoint coordinates, tolerances, material specs).
 
-**Live demo:** [add your Streamlit Cloud link here after deploying]
+**Live demo:**  https://engineering-rag-assistant-8yyaele7rkrswycsxyfnzg.streamlit.app/
 
 ## Why this exists
 
